@@ -24,7 +24,6 @@ void cit_vector(int n, int *a){
 
 void afisare_vector(int *a, int n){
     int i;
-    printf("elementele vectorului sunt: \n")
     for(i=0;i<=n;i++){
             printf("a[%d]= ",i,a[i]);
     }
