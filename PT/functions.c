@@ -96,3 +96,63 @@ void rem_last(struct node *head){
     it->next=NULL;
     printf("valoarea stearsa este %d\n",value);
 }
+
+//mergesort
+
+void merge(int *arr, int left, int right,int middle)
+{
+    int nr_elem1, nr_elem2;
+    middle=(left+right)/2;
+    nr_elem1=middle - left+1;       //numarul deelemente din prima jumatate a vectorului
+    nr_elem2=right- middle;         //numarul de elemente di a doua jumatate a vectorului initial
+
+    int left_a[nr_elem1], right_a[nr_elem2];
+
+    int i=0,j,k;
+
+    for(i=0;i<nr_elem1;i++)
+        left_a[i] = arr[left+i];
+
+    for(j=0;j<nr_elem2;j++)
+        right_a[j] = arr[ middle+1+j ];
+
+    i=0;
+    j=0;
+    k=left;
+
+    while(i < nr_elem1 && j <nr_elem2){
+        if(left_a[i]<=right_a[j]){
+            arr[k]=left_a[i];
+            i++;
+        }
+        else{
+            arr[k]=right_a[j];
+            j++;
+        }
+        k++;
+    }
+
+    while(i < nr_elem1){          //verificam daca mai exista elemente in left_a si le scriem in arr
+        arr[k]= left_a[i];
+        i++;
+        k++;
+    }
+
+    while(j < nr_elem2){
+        arr[k]=right_a[j];
+        j++;
+        k++;
+    }
+}
+
+void merge_sort(int *arr,int left, int right){
+    int middle;
+    if(left<right){
+            middle=(left+right)/2;
+            merge_sort(arr,left,middle);
+            merge_sort(arr,middle+1,right);
+
+            merge(arr,left,right, middle);
+    }
+}
+
