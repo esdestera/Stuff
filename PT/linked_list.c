@@ -1,5 +1,5 @@
 
-#include "function.h "
+#include "functii.h "
 int main()
 {
     struct node *head;
