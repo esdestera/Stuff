@@ -1,5 +1,6 @@
 #ifndef FUNCTII_H_INCLUDED
 #define FUNCTII_H_INCLUDED
+#include "functions.c"
 
 void swap(int a, int b);
 void cit_vector(int n, int *a);
