@@ -4,7 +4,6 @@
 
 void swap(int a, int b);
 void cit_vector(int n, int *a);
-void cit_elem(int n);
 void afisare_vector(int *a, int n);
 
 //liste simplu inlantuite 
@@ -15,6 +14,7 @@ void rem_last(struct node *head);
 int rem_first(struct node *head);
 
 //merge sort
+void random_arr(int *arr,int n);
 void merge(int *arr, int left, int right,int middle);
 void merge_sort(int *arr, int left, int right);
 
