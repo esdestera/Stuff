@@ -9,10 +9,6 @@ void swap(int a, int b){
     b=aux;
 }
 
-void cit_elem(int n){
-    printf("n=");
-    scanf("%d",&n);
-}
 
 void cit_vector(int n, int *a){
     int i;
@@ -97,6 +93,16 @@ void rem_last(struct node *head){
 }
 
 //mergesort
+int rand(void);
+
+void random_arr(int *arr,int n){
+    int i=0;
+    while(n > 0){
+        arr[i] = rand() % 1000;
+        i++;
+        n--;
+    }
+}
 
 void merge(int *arr, int left, int right,int middle)
 {
