@@ -1,4 +1,4 @@
-#include<functii.h>
+#include "functii.h"
 
 int main()
 {
