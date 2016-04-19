@@ -16,11 +16,17 @@ int rem_first(struct node *head);
 //merge sort
 void random_arr(int *arr,int n);
 void merge(int *arr, int left, int right,int middle);
-void merge_sort(int *arr, int left, int right);
+void merge_sort(int *arr, int left, int right );
 
 //selection sort
 void swap(int *a, int *b);
 void selection(int *a, int n); 
+
+//insertion sort 
+void insertion(int *a, int n);
+
+// shell sort 
+void shell(int *a, int n);
 
 
 
