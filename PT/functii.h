@@ -2,7 +2,7 @@
 #define FUNCTII_H_INCLUDED
 #include "functions.c"
 
-void swap(int a, int b);
+
 void cit_vector(int n, int *a);
 void afisare_vector(int *a, int n);
 
@@ -18,4 +18,13 @@ void random_arr(int *arr,int n);
 void merge(int *arr, int left, int right,int middle);
 void merge_sort(int *arr, int left, int right);
 
-#endif // FUNCTII_H_INCLUDED
+//selection sort
+void swap(int *a, int *b);
+void selection(int *a, int n); 
+
+
+
+
+
+#endif // FUNCTII_H_INCLUD
+ED
