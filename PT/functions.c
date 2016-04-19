@@ -3,13 +3,6 @@
 #include <stdbool.h>
 #include "functii.h"
 
-void swap(int a, int b){
-    int aux=a;
-    a=b;
-    b=aux;
-}
-
-
 void cit_vector(int n, int *a){
     int i;
     for(i=0;i<n;i++){
@@ -159,5 +152,27 @@ void merge_sort(int *arr,int left, int right){
 
             merge(arr,left,right, middle);
     }
+}
+
+// selection sort
+// mai folosesc funtctia random_arr  si afisare_vector
+void swap (int *a, int *b){
+    int aux = *a;
+    *a = *b;
+    *b = aux;
+}
+
+void selection(int *a, int n){
+    int i,j,imin;
+    for(j=0 ;j< n-1 ; j++){
+        imin=j;
+        for(i= j+1 ; i<n ; i++){
+            if(a[imin] > a[i])
+                imin=i;
+        }
+    if(imin != j)
+        swap(&a[j],&a[imin]);
+
+        }
 }
 
