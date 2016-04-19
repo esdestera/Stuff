@@ -207,3 +207,21 @@ void insertion(int *a,int n){
         }
     }
 }
+
+//shell sort
+void shell(int *a, int n){
+    int gap=n/2;
+    int i, j, aux;
+    while(gap > 0){
+        for(i=0 ; i<n ; i++){
+            j=i;
+             aux= a[i];
+             while(j >= gap && a[j- gap] > aux){
+                a[j]= a[j- gap];
+                j=j - gap;
+             }
+             a[j] = aux;
+        }
+        gap = gap/2;
+    }
+}
