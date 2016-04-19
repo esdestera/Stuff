@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <time.h>
 #include "functii.h"
 
 void cit_vector(int n, int *a){
@@ -13,15 +14,13 @@ void cit_vector(int n, int *a){
 
 void afisare_vector(int *a, int n){
     int i;
-    for(i=0;i<=n;i++){
-            printf("a[%d]= ",i,a[i]);
-    }
+    printf("elementele sunt:");
+    for(i=0; i<n; i++)
+        printf("%d ",a[i]);
+    printf("\n");
 }
 
 //linked list :D
-#include <stdio.h>
-#include <stdlib.h>
-#include "function.h"
 struct node {
     int inf;
     struct node *next;
@@ -176,3 +175,15 @@ void selection(int *a, int n){
         }
 }
 
+//insertion sort   folosesc functiile: afisare_vector, random_arr,swap;
+
+void insertion(int *a,int n){
+    int i,j;
+    for(i=0; i<n ; i++){
+        j=i;                                //
+        while(j > 0 && a[j-1] > a[j]){
+            swap(&a[j] , &a[j-1]);
+            j--;
+        }
+    }
+}
