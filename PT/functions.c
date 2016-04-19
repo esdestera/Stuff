@@ -142,6 +142,26 @@ void merge(int *arr, int left, int right,int middle)
     }
 }
 
+
+//shell sort using gap sort
+/* alegem un index, de unde sa incepem sortarea, am ales mijlocul*/
+void shell(int *a, int n){
+    int gap=n/2;
+    int i, j, aux;
+    while(gap > 0){
+        for(i=0 ; i<n ; i++){
+            j=i;
+             aux= a[i];
+             while(j >= gap && a[j- gap] > aux){
+                a[j]= a[j- gap];
+                j=j - gap;
+             }
+             a[j] = aux;
+        }
+        gap = gap/2;
+    }
+}
+
 void merge_sort(int *arr,int left, int right){
     int middle;
     if(left<right){
