@@ -225,3 +225,68 @@ void shell(int *a, int n){
         gap = gap/2;
     }
 }
+// heap sort
+struct node {
+    int data;
+    struct node *left, *right
+};
+
+void insert(struct node *root, int value)
+{
+	if (value < root->data)
+	{
+		if (root->left == NULL)
+		{
+			struct node *temp;
+			temp = (struct node*)malloc(sizeof(struct node));
+			temp->data = value;
+			temp->left = NULL;
+			temp->right = NULL;
+			root->left = temp;
+		}
+		else
+			insert(root->left, value);
+	}
+	else
+	{
+		if (root->right == NULL)
+		{
+			struct node *n;
+			n = (struct node*)malloc(sizeof(struct node));
+			n->data = value;
+			n->left = NULL;
+			n->right = NULL;
+			root->right = n;
+		}
+		else
+			insert(root->right, value);
+	}
+}
+
+void HeapSort(struct node *root)
+{
+	if (root->left != NULL)
+		HeapSort(root->left);
+	printf("%d ", root->data);
+	if (root->right != NULL)
+		HeapSort(root->right);
+}
+
+void ConstructHeap(int n,struct node *root)
+{
+	int val,i;
+	for ( i = 1;i <= n-1;i++)
+	{
+		scanf("%d", &val);
+		insert(root, val);
+	}
+}
+int max(int x[], int n){
+    int i, max = x[0];
+    for(i=1;i<n;i++){
+        if(x[i]>max){
+            max = x[i];
+        }
+    }
+    return max;
+}
