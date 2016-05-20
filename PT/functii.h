@@ -6,12 +6,12 @@
 void cit_vector(int n, int *a);
 void afisare_vector(int *a, int n);
 
-//liste simplu inlantuite 
+//liste simplu inlantuite
 void dispay_list(struct node *head);
 void push_first(struct node *head, int val);
 void push_last(struct node *head, int val);
 void rem_last(struct node *head);
-int rem_first(struct node *head);
+void rem_first(struct node *head);
 
 //merge sort
 void random_arr(int *arr,int n);
@@ -20,17 +20,20 @@ void merge_sort(int *arr, int left, int right );
 
 //selection sort
 void swap(int *a, int *b);
-void selection(int *a, int n); 
+void selection(int *a, int n);
 
-//insertion sort 
+//insertion sort
 void insertion(int *a, int n);
 
-// shell sort 
+// shell sort
 void shell(int *a, int n);
 
+//heapsort
+void ConstructHeap(int n,struct nod *root);
+int max(int x[], int n);
+void HeapSort(struct nod *root);
+void insert(struct nod *root, int value);
 
 
 
-
-#endif // FUNCTII_H_INCLUD
-ED
+#endif // FUNCTII_H_INCLUDED
