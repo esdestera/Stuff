@@ -7,7 +7,7 @@
 void cit_vector(int n, int *a){
     int i;
     for(i=0;i<n;i++){
-        printf("a[%d]=");
+        printf("a[%d]=", i);
         scanf("%d",&a[i]);
     }
 }
@@ -59,7 +59,7 @@ void push_last(struct node *head, int val){
     nou-> next =NULL;
 }
 
-int rem_first(struct node *head){
+void rem_first(struct node *head){
     struct node *del;
     int value;
     del= head->next;
@@ -143,24 +143,7 @@ void merge(int *arr, int left, int right,int middle)
 }
 
 
-//shell sort using gap sort
-/* alegem un index, de unde sa incepem sortarea, am ales mijlocul*/
-void shell(int *a, int n){
-    int gap=n/2;
-    int i, j, aux;
-    while(gap > 0){
-        for(i=0 ; i<n ; i++){
-            j=i;
-             aux= a[i];
-             while(j >= gap && a[j- gap] > aux){
-                a[j]= a[j- gap];
-                j=j - gap;
-             }
-             a[j] = aux;
-        }
-        gap = gap/2;
-    }
-}
+
 
 void merge_sort(int *arr,int left, int right){
     int middle;
@@ -208,7 +191,8 @@ void insertion(int *a,int n){
     }
 }
 
-//shell sort
+//shell sort using gap sort
+/* alegem un index, de unde sa incepem sortarea, am ales mijlocul*/
 void shell(int *a, int n){
     int gap=n/2;
     int i, j, aux;
@@ -226,54 +210,55 @@ void shell(int *a, int n){
     }
 }
 // heap sort
-struct node {
+struct nod {
     int data;
-    struct node *left, *right
+    struct nod *left, *right;
 };
 
-void insert(struct node *root, int value)
-{
+void insert(struct nod *root, int value){
 	if (value < root->data)
 	{
 		if (root->left == NULL)
 		{
-			struct node *temp;
-			temp = (struct node*)malloc(sizeof(struct node));
+			struct nod *temp;
+			temp = (struct nod*)malloc(sizeof(struct nod));
 			temp->data = value;
 			temp->left = NULL;
 			temp->right = NULL;
 			root->left = temp;
 		}
-		else
+		else{
 			insert(root->left, value);
+		}
 	}
 	else
 	{
 		if (root->right == NULL)
 		{
-			struct node *n;
-			n = (struct node*)malloc(sizeof(struct node));
+			struct nod *n;
+			n = (struct nod*)malloc(sizeof(struct nod));
 			n->data = value;
 			n->left = NULL;
 			n->right = NULL;
 			root->right = n;
 		}
-		else
+		else{
 			insert(root->right, value);
+		}
 	}
 }
 
-void HeapSort(struct node *root)
-{
-	if (root->left != NULL)
+void HeapSort(struct nod *root){
+	if (root->left != NULL){
 		HeapSort(root->left);
+	}
 	printf("%d ", root->data);
-	if (root->right != NULL)
+	if (root->right != NULL){
 		HeapSort(root->right);
+	}
 }
 
-void ConstructHeap(int n,struct node *root)
-{
+void ConstructHeap(int n,struct nod *root){
 	int val,i;
 	for ( i = 1;i <= n-1;i++)
 	{
