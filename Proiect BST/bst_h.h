@@ -85,4 +85,10 @@ void printLevelOrder(struct bstNode* root);
    \return nothing
 */
 void freeTree(struct bstNode *root);
+/**\fn int nodeDelete(struct bstNode *root, int n);
+   \brief a funcrion that delete a given number of elements from a tree
+   \param root struct bstNode - the address of the root
+   \param n an integer - the number of nodes to be deleted
+   \return nothing*/
+void nodeDelete(struct bstNode *root, int n);
 #endif // BST_H_H_INCLUDED
