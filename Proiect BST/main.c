@@ -1,45 +1,43 @@
 #include "bst_h.h"
 int main()
 {
-
-    int *nrTeste,nrNoduriAdaug, nrNoduriSters,rootValue, val, x[20], i;
-    struct bstNode *root = NULL;
     srand(time(NULL));
-    //scanf("%d",&nrTeste);
-    root = insert_bst(root, 200);
-    create_bst(root,20);
+    FILE *test;
+    test = fopen("test.in.txt","r");
+
+    int nrTeste;
+    int nrNode;
+    int nrNodeAdd;
+    int nrNodeDel;
+    int a[60];
+
+    struct bstNode *root = NULL;
+    root = insert_bst(root, 500);
+
+    fscanf(test,"%d",&nrNode);
+    fscanf(test,"%d",&nrTeste);
+    printf("Numarul de elemente din arbore este %d\n",nrNode);
+    create_bst(root, nrNode);
     printLevelOrder(root);
     printf("\n\n\n");
-   // scanf("%d", &val);
-    for(i=1;i<=20;i++){
-        x[i]= rand()%500;
-        printf(" %d ", x[i]);
-    }
-    printf("\n\n");
-     for(i=1;i<=20;i++){
-            val = x[i];
-       root = insert_bst(root, val);
-    }
-    bstSrd(root);
-
-    printf("\n\n");
-    for(i=1;i<=20;i++){
-            val = x[i];
-       root = deleteNode(root, val);
-    }
-    printLevelOrder(root);
-   /* while(nrTeste > 0){
-        scanf("%d",&nrNoduriAdaug);
-        create_bst(root,nrNoduriAdaug);
-        printf("LEVEL ORDER TRAVERSAL: \n");
-        printLevelOrder(root);
-      //  printf("val= ");
-       // scanf("%d",&val);
-       // delete_node(root, val);
-        printf("\nSRD: \n");
+    while(nrTeste != 0){
+        printf("\n\nTESTUL: %d\n\n ",nrTeste);
+        fscanf(test,"%d %d",&nrNodeAdd, &nrNodeDel);
+        create_bst(root, nrNodeAdd);
+        bstSdr(root);
+        printf("\n\n");
+        nodeDelete(root,nrNodeDel);
         bstSrd(root);
-        free(root);
+
         nrTeste--;
-    }*/
+
+    }
+    freeTree(root);
+    fclose(test);
+
+
+
+
+
 
 }
