@@ -21,11 +21,12 @@ int main()
     printLevelOrder(root);
     printf("\n\n\n");
     while(nrTeste != 0){
-        printf("\n\nTESTUL: %d\n\n ",nrTeste);
+        printf("\n\nTESTUL: %d\n ",nrTeste);
         fscanf(test,"%d %d",&nrNodeAdd, &nrNodeDel);
+        printf("\nnrNodeAdd = %d\n", nrNodeAdd);
         create_bst(root, nrNodeAdd);
         bstSdr(root);
-        printf("\n\n");
+        printf("\n\nnrNodeDel = %d\n",nrNodeDel);
         nodeDelete(root,nrNodeDel);
         bstSrd(root);
 
