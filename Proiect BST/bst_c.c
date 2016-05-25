@@ -241,3 +241,19 @@ void freeTree(struct bstNode *root) {
     free(root);
 }
 
+void nodeDelete(struct bstNode *root, int n){
+    int i;
+    int data;
+    for(i = 0; i < n; i++ ){
+pas1:   data = rand() % 900;
+/**first we try to find if the node exists in the tree, and we do this by calling the procedure search_node for each value,
+if data is an element from the tree we delete it, else we return to the point where we generate the information, until the
+node exists in the tree*/
+        if(search_node(root,data)){
+            root = deleteNode(root, data);
+        }
+        else{
+            goto pas1;
+        }
+    }
+}
