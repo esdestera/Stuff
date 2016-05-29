@@ -59,7 +59,7 @@ void push_last(struct node *head, int val){
     nou-> next =NULL;
 }
 
-void rem_first(struct node *head){
+void pop_first(struct node *head){
     struct node *del;
     int value;
     del= head->next;
@@ -70,7 +70,7 @@ void rem_first(struct node *head){
 
 }
 
-void rem_last(struct node *head){
+void pop_last(struct node *head){
     struct node *it, *del;
     int value;
     it=head;
@@ -258,7 +258,7 @@ void HeapSort(struct nod *root){
 	}
 }
 
-void ConstructHeap(int n,struct nod *root){
+void createHeap(int n,struct nod *root){
 	int val,i;
 	for ( i = 1;i <= n-1;i++)
 	{
@@ -266,12 +266,55 @@ void ConstructHeap(int n,struct nod *root){
 		insert(root, val);
 	}
 }
-int max(int x[], int n){
-    int i, max = x[0];
-    for(i=1;i<n;i++){
-        if(x[i]>max){
-            max = x[i];
+
+/*DFS*/
+void citire(int nrNoduri, int nrMuchii, FILE *test){
+    int i, j, source ,target;
+    if (test == NULL) {
+        printf("Error: Fisierul este gol.");
+        exit(1);
+    }
+
+    for(i = 0; i< nrNoduri;i++){
+        for(j=0;j<nrNoduri;j++){
+            matrice[i][j] = 0;
+            vizitat[i] = 0;
         }
     }
-    return max;
+    for(i=0;i<nrMuchii;i++){
+        fscanf(test,"%d %d",&source,&target);
+        matrice[source][target] = 1 ;
+
+    }
+}
+
+void dfs (struct node *head, int nodStart){
+    int i;
+    push_first(head, nodStart);
+    while(head->next != NULL){
+        nodStart = pop_first(head);
+        vizitat[nodStart] = 1;
+        printf("%d",nodStart);
+        for(i = nrNoduri - 1; i >= 0;i--){
+            if(matrice[nodStart][i] == 1 && vizitat[i] == 0){
+                push_first(head,i);
+            }
+        }
+    }
+}
+
+/*BFS*/
+void bsf (struct node *head, int nodStart){
+    int i;
+    push_last(head, nodStart);
+    while(head->next != NULL){
+        nodStart = pop_first(head);
+        vizitat[nodStart] = 1;
+        printf("%d",nodStart);
+        for(i = nrNoduri - 1; i >= 0;i--){
+            if(matrice[nodStart][i] == 1 && vizitat[i] == 0){
+                push_last(head,i);
+            }
+        }
+    }
 }
