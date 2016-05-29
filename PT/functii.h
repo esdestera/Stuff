@@ -10,8 +10,8 @@ void afisare_vector(int *a, int n);
 void dispay_list(struct node *head);
 void push_first(struct node *head, int val);
 void push_last(struct node *head, int val);
-void rem_last(struct node *head);
-void rem_first(struct node *head);
+void pop_last(struct node *head);
+void pop_first(struct node *head);
 
 //merge sort
 void random_arr(int *arr,int n);
@@ -29,11 +29,17 @@ void insertion(int *a, int n);
 void shell(int *a, int n);
 
 //heapsort
-void ConstructHeap(int n,struct nod *root);
+void createHeap(int n,struct nod *root);
 int max(int x[], int n);
 void HeapSort(struct nod *root);
 void insert(struct nod *root, int value);
 
+//dfs
+void citire(int nrNoduri, int nrMuchii, FILE *test)
+void dfs (struct node *head, int nodStart);
+
+//bsf
+void dfs (struct node *head, int nodStart)
 
 
 #endif // FUNCTII_H_INCLUDED
