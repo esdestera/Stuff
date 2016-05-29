@@ -304,6 +304,18 @@ void dfs (struct node *head, int nodStart){
     }
 }
 
+void dfs( int nodStart){
+    int i,offset;
+
+    vizitat[nodStart] = 1;
+    for (i=0;i<nrNoduri;i++){
+        if (vizitat[i] == 0 && matrice[nodStart][i] == 1){
+            printf("nodStart");
+            dfs(vizitat,i);
+        }
+    }
+}
+
 /*BFS*/
 void bsf (struct node *head, int nodStart){
     int i;
