@@ -3,7 +3,8 @@
 #include <stdbool.h>
 #include <time.h>
 #include "functii.h"
-
+int nrNoduri, nrNoduriVizitate;
+int matrice[10][10], vizitat[10];
 void cit_vector(int n, int *a){
     int i;
     for(i=0;i<n;i++){
