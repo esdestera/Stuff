@@ -34,11 +34,9 @@ void HeapSort(struct nod *root);
 void insert(struct nod *root, int value);
 
 //dfs
-void citire(int nrNoduri, int nrMuchii, FILE *test);
-void dfs (struct node *head, int nodStart);
-void dfs1 ( int nodStart);
-//bsf
-void dfs (struct node *head, int nodStart);
+void citire_cu_muchii(int nrNoduri, int nrMuchii, FILE *test)
+void dfs(int nodStart, int nrNoduri)
+void citire(int nrNoduri, FILE *test)
 
 
 #endif // FUNCTII_H_INCLUDED
