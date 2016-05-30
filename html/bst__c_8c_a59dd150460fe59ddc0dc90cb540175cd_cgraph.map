@@ -1,0 +1,5 @@
+<map id="nodeDelete" name="nodeDelete">
+<area shape="rect" id="node3" href="$bst__c_8c.html#a2920c2f82945dc4355097e985e6ef26d" title="A boolean function to search for an element in the tree. " alt="" coords="141,29,237,56"/>
+<area shape="rect" id="node6" href="$bst__c_8c.html#a7ad361085f1befe193413d7e6bb7228a" title="function that delete a node which has a value we want to delete " alt="" coords="146,104,233,131"/>
+<area shape="rect" id="node9" href="$bst__c_8c.html#ae8d7cabfc5dd6392767dfd7a7c079196" title="find the smallest value in the tree " alt="" coords="286,104,349,131"/>
+</map>
