@@ -30,7 +30,6 @@ void shell(int *a, int n);
 
 //heapsort
 void createHeap(int n,struct nod *root);
-int max(int x[], int n);
 void HeapSort(struct nod *root);
 void insert(struct nod *root, int value);
 
