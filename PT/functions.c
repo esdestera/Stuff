@@ -290,7 +290,7 @@ void citire_cu_muchii(FILE *test){
 }
 
 // DFS cu stiva
-void dfs (struct node *head, int nodStart){
+void dfs_stack (struct node *head, int nodStart){
     int i;
     push_first(head, nodStart);
     vizitat[nodStart] = 1;
@@ -306,7 +306,7 @@ void dfs (struct node *head, int nodStart){
 }
 
 // dfs cu vectori;
-void dfs(int nodStart){
+void dfs_arr(int nodStart){
     int i;
     vizitat[nodStart] = 1;
     for(i=1;i<=nrNoduri;i++){
