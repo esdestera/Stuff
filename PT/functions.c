@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include <time.h>
 #include "functii.h"
-int nrNoduri, nrNoduriVizitate;
+int nrNoduriVizitate;
 int matrice[10][10], vizitat[10];
 void cit_vector(int n, int *a){
     int i;
@@ -269,7 +269,7 @@ void createHeap(int n,struct nod *root){
 }
 
 /*DFS*/
-void citire(int nrNoduri, int nrMuchii, FILE *test){
+void citire_cu_muchii(int nrNoduri, int nrMuchii, FILE *test){
     int i, j, source ,target;
     if (test == NULL) {
         printf("Error: Fisierul este gol.");
@@ -288,7 +288,7 @@ void citire(int nrNoduri, int nrMuchii, FILE *test){
 
     }
 }
-
+/*
 void dfs (struct node *head, int nodStart){
     int i;
     push_first(head, nodStart);
@@ -303,20 +303,9 @@ void dfs (struct node *head, int nodStart){
         }
     }
 }
-
-void dfs( int nodStart){
-    int i,offset;
-
-    vizitat[nodStart] = 1;
-    for (i=0;i<nrNoduri;i++){
-        if (vizitat[i] == 0 && matrice[nodStart][i] == 1){
-            printf("nodStart");
-            dfs(vizitat,i);
-        }
-    }
-}
-
+*/
 /*BFS*/
+/*
 void bsf (struct node *head, int nodStart){
     int i;
     push_last(head, nodStart);
@@ -328,6 +317,37 @@ void bsf (struct node *head, int nodStart){
             if(matrice[nodStart][i] == 1 && vizitat[i] == 0){
                 push_last(head,i);
             }
+        }
+    }
+}
+*/
+
+void dfs(int nodStart, int nrNoduri){
+    int i;
+    vizitat[nodStart] = 1;
+    for(i=1;i<=nrNoduri;i++){
+        if(matrice[nodStart][i] == 1 && vizitat[i] == 0){
+            printf("\n %d->%d", nodStart, i);
+            dfs(i, nrNoduri);
+        }
+    }
+}
+
+
+void citire(int nrNoduri, FILE *test){
+    int i, j;
+    if (test == NULL) {
+        printf("Error: Fisierul este gol.");
+        exit(1);
+    }
+
+    for(i=1;i<=nrNoduri;i++){
+        vizitat[i]=0;
+    }
+
+    for(i=1;i<=nrNoduri;i++){
+        for(j=1;j<=nrNoduri;j++){
+            fscanf(test,"%d",&matrice[i][j]);
         }
     }
 }
