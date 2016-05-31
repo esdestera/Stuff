@@ -300,7 +300,7 @@ void dfs_stack (struct node *head, int nodStart){
         if(matrice[nodStart][i] == 1 && vizitat[i] == 0){
                 vizitat[i] = 1;
 
-                dfs(head, i);
+                dfs_stack(head, i);
         }
     }
 }
@@ -312,7 +312,7 @@ void dfs_arr(int nodStart){
     for(i=1;i<=nrNoduri;i++){
         if(matrice[nodStart][i] == 1 && vizitat[i] == 0){
             printf("\n %d->%d", nodStart, i);
-            dfs(i, nrNoduri);
+            dfs_arr(i);
         }
     }
 }
@@ -351,3 +351,68 @@ void bfs(struct node *head, int nodStart){
     }
 
 }
+
+
+
+// rucsac
+/*
+struct obiect
+{
+    float gr,val,ef;//greutate, castig, raportul cat se ia din obiect
+};
+
+void citire_rucsac(float greutate, int n, struct obiect a[], FILE *f){
+
+    int i;
+    fscanf(f, "%d %f",&n, &greutate );
+    for(i =1;i<=n;i++){
+            fscanf(f ,"%f %f", &a[i].gr, &a[i].val);
+            a[i].ef=0;//initial nu se foloseste obiectul
+        }
+}
+
+void ordonare(int n, struct obiect a[])//ordonare dupa castig/greutate
+{
+    int i,j;
+    struct obiect aux;
+    for(i=1;i<n;i++)
+        for(j=i+1;j<=n;j++)
+            if(a[i].val/a[i].gr < a[j].val/a[j].gr)
+            {
+                aux=a[i]; a[i]=a[j]; a[j]=aux;
+            }
+}
+
+void afisare(int n, struct obiect a[])
+{
+    float c=0;
+    int i;
+    for(i=1;i<=n;i++)
+        { printf("greutatea: %f \tvaloarea: %f \t eficienta: %f", a[i].gr, a[i].val, a[i].ef);
+          c=c+a[i].val*a[i].ef;
+        }
+    printf("\n castig maxim: %f", c);
+}
+
+void greedy(float greutate, int n, struct obiect a[])
+{
+    struct obiect s[100];
+    int i,k;
+    float sp=0;
+    k=0; i=1;
+    while(sp < greutate){
+        if(sp+a[i].gr <= greutate){
+                sp = sp+a[i].gr;
+                s[++k]=a[i];
+                s[k].ef=1;//obiect intreg
+        }
+        else{
+            s[++k]=a[i];
+            s[k].ef=(greutate - sp)/a[i].gr;//obiect fractionat
+            sp = greutate;
+        }
+        i++;
+    }
+    afisare(k,s);
+}
+*/
