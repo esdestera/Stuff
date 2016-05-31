@@ -49,4 +49,9 @@ void ordonare(int n, struct obiect a[]);
 
 int MatrixChainOrder(int p[], int i, int j);
 
+void printSolution(int board[N][N]);
+bool isSafe(int board[N][N], int row, int col);
+bool solveNQ();           // functia back;
+bool solveNQUtil(int board[N][N], int col);
+
 #endif // FUNCTII_H_INCLUDED
