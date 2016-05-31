@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <time.h>
+#include<limits.h>
 #include "functii.h"
+
 int matrice[10][10], vizitat[10], nrMuchii;
 int nrNoduri;
 void cit_vector(int n, int *a){
@@ -416,3 +418,27 @@ void greedy(float greutate, int n, struct obiect a[])
     afisare(k,s);
 }
 */
+
+int MatrixChainOrder(int p[], int i, int j)
+{
+    if(i == j)
+        return 0;
+    int k;
+    int min = INT_MAX;
+    int count;
+
+    // place parenthesis at different places between first
+    // and last matrix, recursively calculate count of
+    // multiplications for each parenthesis placement and
+    // return the minimum count
+    for (k = i; k <j; k++)
+    {
+        count = MatrixChainOrder(p, i, k) + MatrixChainOrder(p, k+1, j) + p[i-1]*p[k]*p[j];
+
+        if (count < min)
+            min = count;
+    }
+
+    // Return minimum count
+    return min;
+}
