@@ -46,4 +46,7 @@ void greedy(float greutate, int n, struct obiect a[]);
 void afisare(int n, struct obiect a[]);
 void citire_rucsac(float greutate, int n, struct obiect a[], FILE *f);
 void ordonare(int n, struct obiect a[]);
+
+int MatrixChainOrder(int p[], int i, int j);
+
 #endif // FUNCTII_H_INCLUDED
