@@ -34,10 +34,16 @@ void HeapSort(struct nod *root);
 void insert(struct nod *root, int value);
 
 //dfs
-void citire_cu_muchii( FILE *test)
-void citire(FILE *test)
-void bfs(struct node *head, int nodStart)
-void dfs_stack (struct node *head, int nodStart)
-void dfs_arr(int nodStart)
+void citire_cu_muchii( FILE *test);
+void citire(FILE *test);
+void bfs(struct node *head, int nodStart);
+void dfs_stack (struct node *head, int nodStart);
+void dfs_arr(int nodStart);
 
+//rucsac
+
+void greedy(float greutate, int n, struct obiect a[]);
+void afisare(int n, struct obiect a[]);
+void citire_rucsac(float greutate, int n, struct obiect a[], FILE *f);
+void ordonare(int n, struct obiect a[]);
 #endif // FUNCTII_H_INCLUDED
