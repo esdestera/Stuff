@@ -1,0 +1,46 @@
+
+#include<stdio.h>
+/* Function to swap values at two pointers */
+
+void afisare_vector(int *a, int n){
+    int i;
+    printf("elementele sunt:");
+    for(i=0; i<n; i++)
+        printf("%d ",a[i]);
+    printf("\n");
+}
+void swap(int *x, int *y)
+{
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+/* Function to print permutations of string
+   This function takes three parameters:
+   1. String
+   2. Starting index of the string
+   3. Ending index of the string. */
+void permute(int *array,int i,int length) {
+  if (length == i){
+     afisare_vector(array,length);
+     return;
+  }
+  int j = i;
+  for (j = i; j < length; j++) {
+     swap(array+i,array+j);
+     permute(array,i+1,length);
+     swap(array+i,array+j);
+  }
+  return;
+}
+
+/* Driver program to test above functions */
+int main()
+{
+    int arr[] = {1, 2, 3, 4};
+    int n = sizeof(arr)/sizeof(int);
+    permute(arr, 0, n-1);
+    return 0;
+}
