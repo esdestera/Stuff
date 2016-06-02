@@ -40,18 +40,23 @@ void bfs(struct node *head, int nodStart);
 void dfs_stack (struct node *head, int nodStart);
 void dfs_arr(int nodStart);
 
+/*
 //rucsac
 
 void greedy(float greutate, int n, struct obiect a[]);
 void afisare(int n, struct obiect a[]);
 void citire_rucsac(float greutate, int n, struct obiect a[], FILE *f);
 void ordonare(int n, struct obiect a[]);
-
+*/
+//marix chain multiplication
 int MatrixChainOrder(int p[], int i, int j);
 
+// N Queen problem
 void printSolution(int board[N][N]);
 bool isSafe(int board[N][N], int row, int col);
 bool solveNQ();           // functia back;
 bool solveNQUtil(int board[N][N], int col);
 
+//numbers permutation
+void permute(int *array,int i,int length)
 #endif // FUNCTII_H_INCLUDED
