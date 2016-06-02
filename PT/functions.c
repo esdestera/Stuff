@@ -579,3 +579,17 @@ int knapSack(int weight, int wt[], int val[], int n)
    return K[n][weight];
 }
 
+//numbers permutations
+void permute(int *array,int i,int length) {
+  if (length == i){
+     afisare_vector(array,length);
+     return;
+  }
+  int j = i;
+  for (j = i; j < length; j++) {
+     swap(array+i,array+j);
+     permute(array,i+1,length);
+     swap(array+i,array+j);
+  }
+  return;
+}
