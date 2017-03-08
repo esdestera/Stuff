@@ -33,9 +33,7 @@ public class Element{
 		Element maxAge = new Element();
 		for(Element it : list){
 			
-			if(maxAge == null)
-				maxAge = it;
-			else if(it.getAge() > maxAge.getAge())
+			if(it.getAge() > maxAge.getAge())
 				maxAge = it ;
 		}
 		return maxAge; 
@@ -78,16 +76,10 @@ public class Element{
 		
 		for(Element it:list)
 		{
-			if(it instanceof Person)
-			{
-				if(oldestPerson == null){
-					oldestPerson = it;
-				}
-				else if(it.age>oldestPerson.age){
+			if(it instanceof Person && it.age>oldestPerson.age){
 					oldestPerson=it;
 				}
 			}
-		}
 		return oldestPerson;
 	}
 	
@@ -95,16 +87,11 @@ public class Element{
 		Element oldestBuilding = new Element();
 		
 		for(Element it : list){
-			if(it instanceof Building){
-				if(oldestBuilding  == null){
-					oldestBuilding = it;
-				}
-				else if(it.age > oldestBuilding.age){
+			if(it instanceof Building && it.age > oldestBuilding.age){
 					oldestBuilding = it;
 				}
 			}
 			
-		}
 		
 		return oldestBuilding;
 		
